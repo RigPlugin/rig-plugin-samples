@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- RhinoCommon ships only a net48 assembly, so the net8.0 build restores it
+         via .NET Framework fallback (NU1701). That's fine: ExcludeAssets="runtime" means
+         we only reference it at compile time, and Rhino supplies the real assembly at runtime. -->
+    <PackageReference
+      Include="RhinoCommon"
+      Version="8.0.23304.9001"
+      ExcludeAssets="runtime"
+      NoWarn="NU1701"
+    />
+    <PackageReference
+      Include="Microsoft.Extensions.DependencyInjection.Abstractions"
+      Version="8.0.0"
+      ExcludeAssets="runtime"
+    />
+    <PackageReference
+      Include="Microsoft.Extensions.Logging.Abstractions"
+      Version="8.0.0"
+      ExcludeAssets="runtime"
+    />
+  </ItemGroup>
+
+  <!-- Reference the installed Rig plugin. Yak puts each version in its own
+       folder (packages\8.0\Rig\<version>\); manifest.txt names the active one. -->
+  <PropertyGroup Condition="'$(RigPluginDir)' == ''">
+    <_RigPackageRoot>$(APPDATA)\McNeel\Rhinoceros\packages\8.0\Rig</_RigPackageRoot>
+    <_RigVersion Condition="Exists('$(_RigPackageRoot)\manifest.txt')"
+      >$([System.IO.File]::ReadAllText('$(_RigPackageRoot)\manifest.txt'))</_RigVersion
+    >
+    <_RigVersion>$(_RigVersion.Trim())</_RigVersion>
+    <RigPluginDir Condition="'$(_RigVersion)' != ''"
+      >$(_RigPackageRoot)\$(_RigVersion)</RigPluginDir
+    >
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Rig">
+      <HintPath>$(RigPluginDir)\Rig.rhp</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

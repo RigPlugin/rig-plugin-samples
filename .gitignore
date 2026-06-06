@@ -1,0 +1,18 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Machine-specific launch profiles
+**/Properties/launchSettings.json
+
+# Rider
+.idea/
+
+# Rhino plug-in artifacts
+*.rhp
+*.rhl

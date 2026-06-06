@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Rhino (Excavator)",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "C:\\Program Files\\Rhino 8\\System\\Rhino.exe",
+      "args": "/nosplash /netcore-8 \"${workspaceFolder}\\Excavator\\Excavator.3dm\"",
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "preLaunchTask": "build Excavator",
+      "env": {
+        "RHINO_PACKAGE_DIRS": "${workspaceFolder}\\Excavator\\bin\\Debug\\net8.0\\"
+      }
+    },
+    {
+      "name": "Launch Rhino (Extrusion)",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "C:\\Program Files\\Rhino 8\\System\\Rhino.exe",
+      "args": "/nosplash /netcore-8 \"${workspaceFolder}\\Extrusion\\Extrusion.3dm\"",
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "preLaunchTask": "build Extrusion",
+      "env": {
+        "RHINO_PACKAGE_DIRS": "${workspaceFolder}\\Extrusion\\bin\\Debug\\net8.0\\"
+      }
+    }
+  ]
+}

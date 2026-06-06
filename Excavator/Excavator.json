@@ -1,0 +1,60 @@
+{
+  "SpacingParams": {
+    "Spacing": "2.5"
+  },
+  "OverlayParams": {
+    "ShowOverlay": "True",
+    "OverlayText": "Rig Plugin"
+  },
+  "FilletingParams": {
+    "BlendType": "Fillet",
+    "FilletRadius": "3",
+    "RailType": "RollingBall"
+  },
+  "CabParams": {
+    "Height": "100",
+    "Length": "100",
+    "Width": "90",
+    "WindowOffset": "10",
+    "WindowThickness": "2"
+  },
+  "BoomParams": {
+    "Height": "30",
+    "HoleRadius": "10",
+    "Length": "220",
+    "Width": "10"
+  },
+  "DipperParams": {
+    "Height": "30",
+    "Length": "150",
+    "Width": "10"
+  },
+  "BucketParams": {
+    "Height": "60",
+    "Thickness": "3",
+    "Width": "80"
+  },
+  "AttachmentPositionParams": {
+    "BodyBaseRotationAngle": "0",
+    "BoomElevationAngle": "25",
+    "DipperElevationAngle": "-45",
+    "BucketElevationAngle": "59"
+  },
+  "UndercarriageParams": {
+    "Length": "200",
+    "NumberOfWheels": "4",
+    "Width": "180"
+  },
+  "TrackParams": {
+    "Thickness": "10",
+    "Width": "50"
+  },
+  "EngineParams": {
+    "Height": "50",
+    "Length": "50"
+  },
+  "LogoParams": {
+    "Depth": "1",
+    "LengthOffset": "40"
+  }
+}
