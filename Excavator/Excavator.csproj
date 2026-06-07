@@ -28,8 +28,8 @@
     />
   </ItemGroup>
 
-  <!-- Reference the installed Rig plugin. Yak puts each version in its own
-       folder (packages\8.0\Rig\<version>\); manifest.txt names the active one. -->
+  <!-- Reference the installed Rig plugin. Yak puts each version under
+       packages\8.0\Rig\<version>\net8.0\; manifest.txt names the active one. -->
   <PropertyGroup Condition="'$(RigPluginDir)' == ''">
     <_RigPackageRoot>$(APPDATA)\McNeel\Rhinoceros\packages\8.0\Rig</_RigPackageRoot>
     <_RigVersion Condition="Exists('$(_RigPackageRoot)\manifest.txt')"
@@ -37,7 +37,7 @@
     >
     <_RigVersion>$(_RigVersion.Trim())</_RigVersion>
     <RigPluginDir Condition="'$(_RigVersion)' != ''"
-      >$(_RigPackageRoot)\$(_RigVersion)</RigPluginDir
+      >$(_RigPackageRoot)\$(_RigVersion)\net8.0</RigPluginDir
     >
   </PropertyGroup>
 
