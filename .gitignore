@@ -7,9 +7,6 @@
 *.user
 *.suo
 
-# Machine-specific launch profiles
-**/Properties/launchSettings.json
-
 # Rider
 .idea/
 
