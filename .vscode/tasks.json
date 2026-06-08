@@ -2,24 +2,24 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "build Excavator",
-      "type": "shell",
-      "command": "dotnet",
-      "args": [
-        "build",
-        "${workspaceFolder}\\Excavator\\Excavator.csproj",
-        "-c", "Debug",
-        "-f", "net8.0"
-      ],
-      "problemMatcher": ["$msCompile"]
-    },
-    {
       "label": "build Extrusion",
       "type": "shell",
       "command": "dotnet",
       "args": [
         "build",
         "${workspaceFolder}\\Extrusion\\Extrusion.csproj",
+        "-c", "Debug",
+        "-f", "net8.0"
+      ],
+      "problemMatcher": ["$msCompile"]
+    },
+    {
+      "label": "build Excavator",
+      "type": "shell",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "${workspaceFolder}\\Excavator\\Excavator.csproj",
         "-c", "Debug",
         "-f", "net8.0"
       ],
