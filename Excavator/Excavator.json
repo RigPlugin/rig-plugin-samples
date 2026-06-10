@@ -3,8 +3,7 @@
     "Spacing": "2.5"
   },
   "OverlayParams": {
-    "ShowOverlay": "True",
-    "OverlayText": "Rig Plugin"
+    "ShowOverlay": "True"
   },
   "FilletingParams": {
     "BlendType": "Fillet",
